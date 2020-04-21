@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons"
+        rel="stylesheet">
+</head>
+
+
+<body>
+    <h2> Natural Language Processing with PyTorch - Hertie School </h2>
+    <div class="">
+        <div class="row">
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-10">
+                <center>
+                    <h3>News Summarization with BERT-powered Encoders</h3>
+                    <p> <b>Models</b>: BERT Encoders: Extractive - Abstractive - Mixed </p>
+                </center>
+                <div class="overlay">
+                    <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+                </div>
+
+                <h4> Input Text </h4>
+                <textarea class="form-control txt_input"
+                    id="txt_input">Istanbul (CNN)Taksim Square's flocks of resident pigeons, normally waddling around with full bellies thanks to cups of grains that children toss at them, swoop unhindered straight at the heads of the few passers-by, mostly policemen and media. It feels more like a scene from Alfred Hitchcock's horror thriller "The Birds" than one of Istanbul's most crowded squares, normally teeming with Turks and tourists alike. Then again, nothing about the impact Covid-19 is having across the globe is normal or familiar. Last weekend, the Turkish government implemented a 48-hour curfew for 31 provinces, impacting three quarters of Turkey's population. And while critics of the government have been calling for these types of severe measures to curb the rise of Covid-19, the initial outcome was disastrous. The curfew was announced just two hours before it was to go into effect -- causing a buying panic in some areas as people flocked to grocery stores and bakeries with little regard for social distancing measures.
+</textarea>
+                <h4> Parameters </h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="input_model">Model</label>
+                        <select id="input_model" class="form-control">
+                            <option selected>BERT Extractive</option>
+                            <option>BERT Abstractive</option>
+                            <option>BERT Mixed Model</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="max_words" id="label_max_words"># words in summary: 50</label>
+                        <input type="range" class="custom-range" min="50" max="200" value="50" step="10" id="max_words">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="num_beams" id="label_num_beams"># beam search: 4</label>
+                        <input type="range" class="custom-range" min="1" max="20" value="4" step="1" id="num_beams">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label></label>
+                        <button type="button" style="background-color:#008080; border-radius: 25px;" class="btn btn-primary btn-lg btn-block"
+                            id="btn-process">Generate</button>
+                    </div>
+                </div>
+
+                <h4> Summary </h4>
+                <textarea class="form-control txt_summary" id="input_summary" readonly> </textarea>
+
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</body>
+
+</html>
