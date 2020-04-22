@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>others package &mdash; BERTNewsSummary 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="post_stats module" href="post_stats.html" />
+    <link rel="prev" title="models package" href="models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BERTNewsSummary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cal_rouge.html">cal_rouge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distributed.html">distributed module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">others package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-others.logging">others.logging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-others.pyrouge">others.pyrouge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-others.tokenization">others.tokenization module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-others.utils">others.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-others">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="post_stats.html">post_stats module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepro.html">prepro package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocess.html">preprocess module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_abstractive.html">train_abstractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_extractive.html">train_extractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">translate package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BERTNewsSummary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">src</a> &raquo;</li>
+        
+      <li>others package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/others.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="others-package">
+<h1>others package<a class="headerlink" href="#others-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-others.logging">
+<span id="others-logging-module"></span><h2>others.logging module<a class="headerlink" href="#module-others.logging" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="others.logging.init_logger">
+<code class="descclassname">others.logging.</code><code class="descname">init_logger</code><span class="sig-paren">(</span><em>log_file=None</em>, <em>log_file_level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#others.logging.init_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logger builder to handle and record operations</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-others.pyrouge">
+<span id="others-pyrouge-module"></span><h2>others.pyrouge module<a class="headerlink" href="#module-others.pyrouge" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="others.pyrouge.DirectoryProcessor">
+<em class="property">class </em><code class="descclassname">others.pyrouge.</code><code class="descname">DirectoryProcessor</code><a class="headerlink" href="#others.pyrouge.DirectoryProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="others.pyrouge.DirectoryProcessor.process">
+<em class="property">static </em><code class="descname">process</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em>, <em>function</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.DirectoryProcessor.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply function to all files in input_dir and save the resulting ouput
+files in output_dir.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="others.pyrouge.Rouge155">
+<em class="property">class </em><code class="descclassname">others.pyrouge.</code><code class="descname">Rouge155</code><span class="sig-paren">(</span><em>rouge_dir=None</em>, <em>rouge_args=None</em>, <em>temp_dir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a wrapper for the ROUGE 1.5.5 summary evaluation package.
+This class is designed to simplify the evaluation process by:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Converting summaries into a format ROUGE understands.</li>
+<li><dl class="first docutils">
+<dt>Generating the ROUGE configuration file automatically based</dt>
+<dd>on filename patterns.</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>This class can be used within Python like this:</p>
+<p>rouge = Rouge155()
+rouge.system_dir = ‘test/systems’
+rouge.model_dir = ‘test/models’</p>
+<p># The system filename pattern should contain one group that
+# matches the document ID.
+rouge.system_filename_pattern = ‘SL.P.10.R.11.SL062003-(d+).html’</p>
+<p># The model filename pattern has ‘#ID#’ as a placeholder for the
+# document ID. If there are multiple model summaries, pyrouge
+# will use the provided regex to automatically match them with
+# the corresponding system summary. Here, [A-Z] matches
+# multiple model summaries for a given #ID#.
+rouge.model_filename_pattern = ‘SL.P.10.R.[A-Z].SL062003-#ID#.html’</p>
+<p>rouge_output = rouge.evaluate()
+print(rouge_output)
+output_dict = rouge.output_to_dict(rouge_ouput)
+print(output_dict)
+-&gt;    {‘rouge_1_f_score’: 0.95652,</p>
+<blockquote>
+<div><blockquote>
+<div>‘rouge_1_f_score_cb’: 0.95652,
+‘rouge_1_f_score_ce’: 0.95652,
+‘rouge_1_precision’: 0.95652,</div></blockquote>
+<p>[…]</p>
+</div></blockquote>
+<p>To evaluate multiple systems:</p>
+<blockquote>
+<div><p>rouge = Rouge155()
+rouge.system_dir = ‘/PATH/TO/systems’
+rouge.model_dir = ‘PATH/TO/models’
+for system_id in [‘id1’, ‘id2’, ‘id3’]:</p>
+<blockquote>
+<div>rouge.system_filename_pattern =                 ‘SL.P/.10.R.{}.SL062003-(d+).html’.format(system_id)
+rouge.model_filename_pattern =                 ‘SL.P.10.R.[A-Z].SL062003-#ID#.html’
+rouge_output = rouge.evaluate(system_id)
+print(rouge_output)</div></blockquote>
+</div></blockquote>
+<dl class="attribute">
+<dt id="others.pyrouge.Rouge155.bin_path">
+<code class="descname">bin_path</code><a class="headerlink" href="#others.pyrouge.Rouge155.bin_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path of the ROUGE binary (although it’s technically
+a script), i.e. rouge_home_dir/ROUGE-1.5.5.pl</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="others.pyrouge.Rouge155.config_file">
+<code class="descname">config_file</code><a class="headerlink" href="#others.pyrouge.Rouge155.config_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.convert_and_evaluate">
+<code class="descname">convert_and_evaluate</code><span class="sig-paren">(</span><em>system_id=1</em>, <em>split_sentences=False</em>, <em>rouge_args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.convert_and_evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert plain text summaries to ROUGE format and run ROUGE to
+evaluate the system summaries in system_dir against the model
+summaries in model_dir. Optionally split texts into sentences
+in case they aren’t already.</p>
+<p>This is just a convenience method combining
+convert_summaries_to_rouge_format() and evaluate().</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>split_sentences:    Optional argument specifying if</dt>
+<dd>sentences should be split.</dd>
+<dt>system_id:          Optional system ID which will be printed</dt>
+<dd>in ROUGE’s output.</dd>
+</dl>
+</div></blockquote>
+<p>Returns: ROUGE output as string.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="others.pyrouge.Rouge155.convert_summaries_to_rouge_format">
+<em class="property">static </em><code class="descname">convert_summaries_to_rouge_format</code><span class="sig-paren">(</span><em>input_dir</em>, <em>output_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.convert_summaries_to_rouge_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert all files in input_dir into a format ROUGE understands
+and saves the files to output_dir. The input files are assumed
+to be plain text with one sentence per line.</p>
+<blockquote>
+<div><p>input_dir:  Path of directory containing the input files.
+output_dir: Path of directory in which the converted files</p>
+<blockquote>
+<div>will be saved.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="others.pyrouge.Rouge155.convert_text_to_rouge_format">
+<em class="property">static </em><code class="descname">convert_text_to_rouge_format</code><span class="sig-paren">(</span><em>text</em>, <em>title='dummy title'</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.convert_text_to_rouge_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a text to a format ROUGE understands. The text is
+assumed to contain one sentence per line.</p>
+<blockquote>
+<div><p>text:   The text to convert, containg one sentence per line.
+title:  Optional title for the text. The title will appear</p>
+<blockquote>
+<div>in the converted file, but doesn’t seem to have
+any other relevance.</div></blockquote>
+</div></blockquote>
+<p>Returns: The converted text as string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>system_id=1</em>, <em>rouge_args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run ROUGE to evaluate the system summaries in system_dir against
+the model summaries in model_dir. The summaries are assumed to
+be in the one-sentence-per-line HTML format ROUGE understands.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>system_id:  Optional system ID which will be printed in</dt>
+<dd>ROUGE’s output.</dd>
+</dl>
+</div></blockquote>
+<p>Returns: Rouge output as string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="others.pyrouge.Rouge155.model_filename_pattern">
+<code class="descname">model_filename_pattern</code><a class="headerlink" href="#others.pyrouge.Rouge155.model_filename_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>The regular expression pattern for matching model summary
+filenames. The pattern needs to contain the string “#ID#”,
+which is a placeholder for the document ID.</p>
+<p>E.g. “SL.P.10.R.[A-Z].SL062003-#ID#.html” will match the model
+filenames in the SPL2003/system folder of the ROUGE SPL
+example in the “sample-test” folder.</p>
+<p>“#ID#” is a placeholder for the document ID which has been
+matched by the “(d+)” part of the system filename pattern.
+The different model summaries for a given document ID are
+matched by the “[A-Z]” part.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.output_to_dict">
+<code class="descname">output_to_dict</code><span class="sig-paren">(</span><em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.output_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the ROUGE output into python dictionary for further
+processing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.save_home_dir">
+<code class="descname">save_home_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.save_home_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="others.pyrouge.Rouge155.settings_file">
+<code class="descname">settings_file</code><a class="headerlink" href="#others.pyrouge.Rouge155.settings_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path of the setttings file, which stores the ROUGE home dir.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.split_sentences">
+<code class="descname">split_sentences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.split_sentences" title="Permalink to this definition">¶</a></dt>
+<dd><p>ROUGE requires texts split into sentences. In case the texts
+are not already split, this method can be used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="others.pyrouge.Rouge155.system_filename_pattern">
+<code class="descname">system_filename_pattern</code><a class="headerlink" href="#others.pyrouge.Rouge155.system_filename_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>The regular expression pattern for matching system summary
+filenames. The regex string.</p>
+<p>E.g. “SL.P.10.R.11.SL062003-(d+).html” will match the system
+filenames in the SPL2003/system folder of the ROUGE SPL example
+in the “sample-test” folder.</p>
+<p>Currently, there is no support for multiple systems.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.pyrouge.Rouge155.write_config">
+<code class="descname">write_config</code><span class="sig-paren">(</span><em>config_file_path=None</em>, <em>system_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.write_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the ROUGE configuration file, which is basically a list
+of system summary files and their matching model summary files.</p>
+<p>This is a non-static version of write_config_file_static().</p>
+<blockquote>
+<div><p>config_file_path:   Path of the configuration file.
+system_id:          Optional system ID string which will</p>
+<blockquote>
+<div>appear in the ROUGE output.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="others.pyrouge.Rouge155.write_config_static">
+<em class="property">static </em><code class="descname">write_config_static</code><span class="sig-paren">(</span><em>system_dir</em>, <em>system_filename_pattern</em>, <em>model_dir</em>, <em>model_filename_pattern</em>, <em>config_file_path</em>, <em>system_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.Rouge155.write_config_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the ROUGE configuration file, which is basically a list
+of system summary files and their corresponding model summary
+files.</p>
+<p>pyrouge uses regular expressions to automatically find the
+matching model summary files for a given system summary file
+(cf. docstrings for system_filename_pattern and
+model_filename_pattern).</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>system_dir:                 Path of directory containing</dt>
+<dd>system summaries.</dd>
+<dt>system_filename_pattern:    Regex string for matching</dt>
+<dd>system summary filenames.</dd>
+<dt>model_dir:                  Path of directory containing</dt>
+<dd>model summaries.</dd>
+<dt>model_filename_pattern:     Regex string for matching model</dt>
+<dd>summary filenames.</dd>
+</dl>
+<p>config_file_path:           Path of the configuration file.
+system_id:                  Optional system ID string which</p>
+<blockquote>
+<div>will appear in the ROUGE output.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="others.pyrouge.clean">
+<code class="descclassname">others.pyrouge.</code><code class="descname">clean</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#others.pyrouge.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use regular expression to clean up words</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-others.tokenization">
+<span id="others-tokenization-module"></span><h2>others.tokenization module<a class="headerlink" href="#module-others.tokenization" title="Permalink to this headline">¶</a></h2>
+<p>Tokenization classes.</p>
+<dl class="class">
+<dt id="others.tokenization.BasicTokenizer">
+<em class="property">class </em><code class="descclassname">others.tokenization.</code><code class="descname">BasicTokenizer</code><span class="sig-paren">(</span><em>do_lower_case=True</em>, <em>never_split=('[UNK]'</em>, <em>'[SEP]'</em>, <em>'[PAD]'</em>, <em>'[CLS]'</em>, <em>'[MASK]')</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BasicTokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Runs basic tokenization (punctuation splitting, lower casing, etc.).</p>
+<dl class="method">
+<dt id="others.tokenization.BasicTokenizer.tokenize">
+<code class="descname">tokenize</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BasicTokenizer.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tokenizes a piece of text.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="others.tokenization.BertTokenizer">
+<em class="property">class </em><code class="descclassname">others.tokenization.</code><code class="descname">BertTokenizer</code><span class="sig-paren">(</span><em>vocab_file</em>, <em>do_lower_case=True</em>, <em>max_len=None</em>, <em>never_split=('[UNK]'</em>, <em>'[SEP]'</em>, <em>'[PAD]'</em>, <em>'[CLS]'</em>, <em>'[MASK]'</em>, <em>'[unused0]'</em>, <em>'[unused1]'</em>, <em>'[unused2]'</em>, <em>'[unused3]'</em>, <em>'[unused4]'</em>, <em>'[unused5]'</em>, <em>'[unused6]')</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BertTokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Runs end-to-end tokenization: punctuation splitting + wordpiece</p>
+<dl class="method">
+<dt id="others.tokenization.BertTokenizer.convert_ids_to_tokens">
+<code class="descname">convert_ids_to_tokens</code><span class="sig-paren">(</span><em>ids</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BertTokenizer.convert_ids_to_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a sequence of ids in wordpiece tokens using the vocab.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.tokenization.BertTokenizer.convert_tokens_to_ids">
+<code class="descname">convert_tokens_to_ids</code><span class="sig-paren">(</span><em>tokens</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BertTokenizer.convert_tokens_to_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a sequence of tokens into ids using the vocab.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="others.tokenization.BertTokenizer.from_pretrained">
+<em class="property">classmethod </em><code class="descname">from_pretrained</code><span class="sig-paren">(</span><em>pretrained_model_name_or_path</em>, <em>cache_dir=None</em>, <em>*inputs</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BertTokenizer.from_pretrained" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate a PreTrainedBertModel from a pre-trained model file.
+Download and cache the pre-trained model file if needed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="others.tokenization.BertTokenizer.tokenize">
+<code class="descname">tokenize</code><span class="sig-paren">(</span><em>text</em>, <em>use_bert_basic_tokenizer=False</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.BertTokenizer.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="others.tokenization.WordpieceTokenizer">
+<em class="property">class </em><code class="descclassname">others.tokenization.</code><code class="descname">WordpieceTokenizer</code><span class="sig-paren">(</span><em>vocab</em>, <em>unk_token='[UNK]'</em>, <em>max_input_chars_per_word=100</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.WordpieceTokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Runs WordPiece tokenization.</p>
+<dl class="method">
+<dt id="others.tokenization.WordpieceTokenizer.tokenize">
+<code class="descname">tokenize</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.WordpieceTokenizer.tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tokenizes a piece of text into its word pieces.</p>
+<p>This uses a greedy longest-match-first algorithm to perform tokenization
+using the given vocabulary.</p>
+<dl class="docutils">
+<dt>For example:</dt>
+<dd>input = “unaffable”
+output = [“un”, “##aff”, “##able”]</dd>
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>text: A single token or whitespace separated tokens. This should have</dt>
+<dd>already been passed through <cite>BasicTokenizer</cite>.</dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd>A list of wordpiece tokens.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="others.tokenization.load_vocab">
+<code class="descclassname">others.tokenization.</code><code class="descname">load_vocab</code><span class="sig-paren">(</span><em>vocab_file</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.load_vocab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a vocabulary file into a dictionary.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="others.tokenization.whitespace_tokenize">
+<code class="descclassname">others.tokenization.</code><code class="descname">whitespace_tokenize</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#others.tokenization.whitespace_tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs basic whitespace cleaning and splitting on a peice of text.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-others.utils">
+<span id="others-utils-module"></span><h2>others.utils module<a class="headerlink" href="#module-others.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="others.utils.clean">
+<code class="descclassname">others.utils.</code><code class="descname">clean</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#others.utils.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="others.utils.process">
+<code class="descclassname">others.utils.</code><code class="descname">process</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#others.utils.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="others.utils.rouge_results_to_str">
+<code class="descclassname">others.utils.</code><code class="descname">rouge_results_to_str</code><span class="sig-paren">(</span><em>results_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#others.utils.rouge_results_to_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert rouge results to string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="others.utils.test_rouge">
+<code class="descclassname">others.utils.</code><code class="descname">test_rouge</code><span class="sig-paren">(</span><em>temp_dir</em>, <em>cand</em>, <em>ref</em><span class="sig-paren">)</span><a class="headerlink" href="#others.utils.test_rouge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test result of ROUGE score of candidate text against reference text</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="others.utils.tile">
+<code class="descclassname">others.utils.</code><code class="descname">tile</code><span class="sig-paren">(</span><em>x</em>, <em>count</em>, <em>dim=0</em><span class="sig-paren">)</span><a class="headerlink" href="#others.utils.tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tiles x on dimension dim count times.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-others">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-others" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="post_stats.html" class="btn btn-neutral float-right" title="post_stats module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="models.html" class="btn btn-neutral float-left" title="models package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Joshua Ole Huy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>distributed module &mdash; BERTNewsSummary 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="models package" href="models.html" />
+    <link rel="prev" title="cal_rouge module" href="cal_rouge.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BERTNewsSummary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cal_rouge.html">cal_rouge module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">distributed module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">others package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post_stats.html">post_stats module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepro.html">prepro package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocess.html">preprocess module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_abstractive.html">train_abstractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_extractive.html">train_extractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">translate package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BERTNewsSummary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">src</a> &raquo;</li>
+        
+      <li>distributed module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/distributed.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-distributed">
+<span id="distributed-module"></span><h1>distributed module<a class="headerlink" href="#module-distributed" title="Permalink to this headline">¶</a></h1>
+<p>Pytorch Distributed utils
+This piece of code was heavily inspired by the equivalent of Fairseq-py
+<a class="reference external" href="https://github.com/pytorch/fairseq">https://github.com/pytorch/fairseq</a></p>
+<dl class="function">
+<dt id="distributed.all_gather_list">
+<code class="descclassname">distributed.</code><code class="descname">all_gather_list</code><span class="sig-paren">(</span><em>data</em>, <em>max_size=4096</em><span class="sig-paren">)</span><a class="headerlink" href="#distributed.all_gather_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gathers arbitrary data from all nodes into a list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="distributed.all_reduce_and_rescale_tensors">
+<code class="descclassname">distributed.</code><code class="descname">all_reduce_and_rescale_tensors</code><span class="sig-paren">(</span><em>tensors</em>, <em>rescale_denom</em>, <em>buffer_size=10485760</em><span class="sig-paren">)</span><a class="headerlink" href="#distributed.all_reduce_and_rescale_tensors" title="Permalink to this definition">¶</a></dt>
+<dd><p>All-reduce and rescale tensors in chunks of the specified size.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>tensors: list of Tensors to all-reduce
+rescale_denom: denominator for rescaling summed Tensors
+buffer_size: all-reduce chunk size in bytes</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="distributed.is_master">
+<code class="descclassname">distributed.</code><code class="descname">is_master</code><span class="sig-paren">(</span><em>gpu_ranks</em>, <em>device_id</em><span class="sig-paren">)</span><a class="headerlink" href="#distributed.is_master" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="distributed.multi_init">
+<code class="descclassname">distributed.</code><code class="descname">multi_init</code><span class="sig-paren">(</span><em>device_id</em>, <em>world_size</em>, <em>gpu_ranks</em><span class="sig-paren">)</span><a class="headerlink" href="#distributed.multi_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="models package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cal_rouge.html" class="btn btn-neutral float-left" title="cal_rouge module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Joshua Ole Huy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

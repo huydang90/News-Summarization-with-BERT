@@ -1,0 +1,1719 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>models package &mdash; BERTNewsSummary 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="others package" href="others.html" />
+    <link rel="prev" title="distributed module" href="distributed.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BERTNewsSummary
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cal_rouge.html">cal_rouge module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distributed.html">distributed module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">models package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.adam">models.adam module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.data_loader">models.data_loader module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.decoder">models.decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.encoder">models.encoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.loss">models.loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.model_builder">models.model_builder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.neural">models.neural module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.optimizers">models.optimizers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.predictor">models.predictor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.reporter">models.reporter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.reporter_ext">models.reporter_ext module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.trainer">models.trainer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models.trainer_ext">models.trainer_ext module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">others package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="post_stats.html">post_stats module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepro.html">prepro package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocess.html">preprocess module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train.html">train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_abstractive.html">train_abstractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="train_extractive.html">train_extractive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translate.html">translate package</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BERTNewsSummary</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">src</a> &raquo;</li>
+        
+      <li>models package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/models.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models-package">
+<h1>models package<a class="headerlink" href="#models-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-models.adam">
+<span id="models-adam-module"></span><h2>models.adam module<a class="headerlink" href="#module-models.adam" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.adam.Adam">
+<em class="property">class </em><code class="descclassname">models.adam.</code><code class="descname">Adam</code><span class="sig-paren">(</span><em>params</em>, <em>lr=0.001</em>, <em>betas=(0.9</em>, <em>0.999)</em>, <em>eps=1e-08</em>, <em>weight_decay=0</em>, <em>amsgrad=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.adam.Adam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.optimizer.Optimizer</span></code></p>
+<p>Implements Adam algorithm.</p>
+<p>It has been proposed in <a class="reference external" href="https://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>.</p>
+<dl class="docutils">
+<dt>Arguments:</dt>
+<dd><dl class="first docutils">
+<dt>params (iterable): iterable of parameters to optimize or dicts defining</dt>
+<dd>parameter groups</dd>
+</dl>
+<p>lr (float, optional): learning rate (default: 1e-3)
+betas (Tuple[float, float], optional): coefficients used for computing</p>
+<blockquote>
+<div>running averages of gradient and its square (default: (0.9, 0.999))</div></blockquote>
+<dl class="docutils">
+<dt>eps (float, optional): term added to the denominator to improve</dt>
+<dd>numerical stability (default: 1e-8)</dd>
+</dl>
+<p>weight_decay (float, optional): weight decay (L2 penalty) (default: 0)
+amsgrad (boolean, optional): whether to use the AMSGrad variant of this</p>
+<blockquote class="last">
+<div>algorithm from the paper <a class="reference external" href="https://openreview.net/forum?id=ryQu7f-RZ">On the Convergence of Adam and Beyond</a>
+(default: False)</div></blockquote>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.adam.Adam.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>closure=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.adam.Adam.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a single optimization step.
+Arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>closure (callable, optional): A closure that reevaluates the model</dt>
+<dd>and returns the loss.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.data_loader">
+<span id="models-data-loader-module"></span><h2>models.data_loader module<a class="headerlink" href="#module-models.data_loader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.data_loader.Batch">
+<em class="property">class </em><code class="descclassname">models.data_loader.</code><code class="descname">Batch</code><span class="sig-paren">(</span><em>data=None</em>, <em>device=None</em>, <em>is_test=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.Batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.data_loader.DataIterator">
+<em class="property">class </em><code class="descclassname">models.data_loader.</code><code class="descname">DataIterator</code><span class="sig-paren">(</span><em>args</em>, <em>dataset</em>, <em>batch_size</em>, <em>device=None</em>, <em>is_test=False</em>, <em>shuffle=True</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="models.data_loader.DataIterator.batch">
+<code class="descname">batch</code><span class="sig-paren">(</span><em>data</em>, <em>batch_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator.batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yield elements from data in chunks of batch_size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.DataIterator.batch_buffer">
+<code class="descname">batch_buffer</code><span class="sig-paren">(</span><em>data</em>, <em>batch_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator.batch_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.DataIterator.create_batches">
+<code class="descname">create_batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create batches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.DataIterator.data">
+<code class="descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.DataIterator.preprocess">
+<code class="descname">preprocess</code><span class="sig-paren">(</span><em>ex</em>, <em>is_test</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.DataIterator.preprocess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.data_loader.Dataloader">
+<em class="property">class </em><code class="descclassname">models.data_loader.</code><code class="descname">Dataloader</code><span class="sig-paren">(</span><em>args</em>, <em>datasets</em>, <em>batch_size</em>, <em>device</em>, <em>shuffle</em>, <em>is_test</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.Dataloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="models.data_loader.TextDataloader">
+<em class="property">class </em><code class="descclassname">models.data_loader.</code><code class="descname">TextDataloader</code><span class="sig-paren">(</span><em>args</em>, <em>datasets</em>, <em>batch_size</em>, <em>device</em>, <em>shuffle</em>, <em>is_test</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.TextDataloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="models.data_loader.TextDataloader.batch_buffer">
+<code class="descname">batch_buffer</code><span class="sig-paren">(</span><em>data</em>, <em>batch_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.TextDataloader.batch_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.TextDataloader.create_batches">
+<code class="descname">create_batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.TextDataloader.create_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create batches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.TextDataloader.data">
+<code class="descname">data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.TextDataloader.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.data_loader.TextDataloader.preprocess">
+<code class="descname">preprocess</code><span class="sig-paren">(</span><em>ex</em>, <em>is_test</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.TextDataloader.preprocess" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.data_loader.abs_batch_size_fn">
+<code class="descclassname">models.data_loader.</code><code class="descname">abs_batch_size_fn</code><span class="sig-paren">(</span><em>new</em>, <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.abs_batch_size_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="models.data_loader.ext_batch_size_fn">
+<code class="descclassname">models.data_loader.</code><code class="descname">ext_batch_size_fn</code><span class="sig-paren">(</span><em>new</em>, <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.ext_batch_size_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="models.data_loader.load_dataset">
+<code class="descclassname">models.data_loader.</code><code class="descname">load_dataset</code><span class="sig-paren">(</span><em>args</em>, <em>corpus_type</em>, <em>shuffle</em><span class="sig-paren">)</span><a class="headerlink" href="#models.data_loader.load_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dataset generator. Don’t do extra stuff here, like printing,
+because they will be postponed to the first loading time.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>corpus_type: ‘train’ or ‘valid’</dd>
+<dt>Returns:</dt>
+<dd>A list of dataset, the dataset(s) are lazily loaded.</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.decoder">
+<span id="models-decoder-module"></span><h2>models.decoder module<a class="headerlink" href="#module-models.decoder" title="Permalink to this headline">¶</a></h2>
+<p>Implementation of “Attention is All You Need”</p>
+<dl class="class">
+<dt id="models.decoder.TransformerDecoder">
+<em class="property">class </em><code class="descclassname">models.decoder.</code><code class="descname">TransformerDecoder</code><span class="sig-paren">(</span><em>num_layers</em>, <em>d_model</em>, <em>heads</em>, <em>d_ff</em>, <em>dropout</em>, <em>embeddings</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>The Transformer decoder from “Attention is All You Need”.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">num_layers (int): number of encoder layers.
+d_model (int): size of the model
+heads (int): number of heads
+d_ff (int): size of the inner FF layer
+dropout (float): dropout parameters
+embeddings (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.modules.Embeddings</span></code>):</p>
+<blockquote>
+<div>embeddings to use, should have positional encodings</div></blockquote>
+<p class="last">attn_type (str): if using a seperate copy attention</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.decoder.TransformerDecoder.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>tgt</em>, <em>memory_bank</em>, <em>state</em>, <em>memory_lengths=None</em>, <em>step=None</em>, <em>cache=None</em>, <em>memory_masks=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoder.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.modules.RNNDecoderBase.forward()</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.decoder.TransformerDecoder.init_decoder_state">
+<code class="descname">init_decoder_state</code><span class="sig-paren">(</span><em>src</em>, <em>memory_bank</em>, <em>with_cache=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoder.init_decoder_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init decoder state</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.decoder.TransformerDecoderLayer">
+<em class="property">class </em><code class="descclassname">models.decoder.</code><code class="descname">TransformerDecoderLayer</code><span class="sig-paren">(</span><em>d_model</em>, <em>heads</em>, <em>d_ff</em>, <em>dropout</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>d_model (int): the dimension of keys/values/queries in</dt>
+<dd>MultiHeadedAttention, also the input size of
+the first-layer of the PositionwiseFeedForward.</dd>
+</dl>
+<p class="last">heads (int): the number of heads for MultiHeadedAttention.
+d_ff (int): the second-layer of the PositionwiseFeedForward.
+dropout (float): dropout probability(0-1.0).
+self_attn_type (string): type of self-attention scaled-dot, average</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.decoder.TransformerDecoderLayer.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>inputs</em>, <em>memory_bank</em>, <em>src_pad_mask</em>, <em>tgt_pad_mask</em>, <em>previous_input=None</em>, <em>layer_cache=None</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Args:</dt>
+<dd>inputs (<cite>FloatTensor</cite>): <cite>[batch_size x 1 x model_dim]</cite>
+memory_bank (<cite>FloatTensor</cite>): <cite>[batch_size x src_len x model_dim]</cite>
+src_pad_mask (<cite>LongTensor</cite>): <cite>[batch_size x 1 x src_len]</cite>
+tgt_pad_mask (<cite>LongTensor</cite>): <cite>[batch_size x 1 x 1]</cite></dd>
+<dt>Returns:</dt>
+<dd><p class="first">(<cite>FloatTensor</cite>, <cite>FloatTensor</cite>, <cite>FloatTensor</cite>):</p>
+<ul class="last simple">
+<li>output <cite>[batch_size x 1 x model_dim]</cite></li>
+<li>attn <cite>[batch_size x 1 x src_len]</cite></li>
+<li>all_input <cite>[batch_size x current_step x model_dim]</cite></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.decoder.TransformerDecoderState">
+<em class="property">class </em><code class="descclassname">models.decoder.</code><code class="descname">TransformerDecoderState</code><span class="sig-paren">(</span><em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.neural.DecoderState" title="models.neural.DecoderState"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.neural.DecoderState</span></code></a></p>
+<p>Transformer Decoder state base class</p>
+<dl class="method">
+<dt id="models.decoder.TransformerDecoderState.detach">
+<code class="descname">detach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderState.detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Need to document this</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.decoder.TransformerDecoderState.map_batch_fn">
+<code class="descname">map_batch_fn</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderState.map_batch_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.decoder.TransformerDecoderState.repeat_beam_size_times">
+<code class="descname">repeat_beam_size_times</code><span class="sig-paren">(</span><em>beam_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderState.repeat_beam_size_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repeat beam_size times along batch dimension.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.decoder.TransformerDecoderState.update_state">
+<code class="descname">update_state</code><span class="sig-paren">(</span><em>new_input</em>, <em>previous_layer_inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#models.decoder.TransformerDecoderState.update_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.encoder">
+<span id="models-encoder-module"></span><h2>models.encoder module<a class="headerlink" href="#module-models.encoder" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.encoder.Classifier">
+<em class="property">class </em><code class="descclassname">models.encoder.</code><code class="descname">Classifier</code><span class="sig-paren">(</span><em>hidden_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.Classifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.encoder.Classifier.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em>, <em>mask_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.Classifier.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.encoder.ExtTransformerEncoder">
+<em class="property">class </em><code class="descclassname">models.encoder.</code><code class="descname">ExtTransformerEncoder</code><span class="sig-paren">(</span><em>d_model</em>, <em>d_ff</em>, <em>heads</em>, <em>dropout</em>, <em>num_inter_layers=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.ExtTransformerEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.encoder.ExtTransformerEncoder.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>top_vecs</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.ExtTransformerEncoder.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>See <code class="xref py py-obj docutils literal notranslate"><span class="pre">EncoderBase.forward()</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.encoder.PositionalEncoding">
+<em class="property">class </em><code class="descclassname">models.encoder.</code><code class="descname">PositionalEncoding</code><span class="sig-paren">(</span><em>dropout</em>, <em>dim</em>, <em>max_len=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.PositionalEncoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.encoder.PositionalEncoding.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>emb</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.PositionalEncoding.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.encoder.PositionalEncoding.get_emb">
+<code class="descname">get_emb</code><span class="sig-paren">(</span><em>emb</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.PositionalEncoding.get_emb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.encoder.TransformerEncoderLayer">
+<em class="property">class </em><code class="descclassname">models.encoder.</code><code class="descname">TransformerEncoderLayer</code><span class="sig-paren">(</span><em>d_model</em>, <em>heads</em>, <em>d_ff</em>, <em>dropout</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.TransformerEncoderLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.encoder.TransformerEncoderLayer.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>iter</em>, <em>query</em>, <em>inputs</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#models.encoder.TransformerEncoderLayer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.loss">
+<span id="models-loss-module"></span><h2>models.loss module<a class="headerlink" href="#module-models.loss" title="Permalink to this headline">¶</a></h2>
+<p>This file handles the details of the loss function during training.</p>
+<dl class="docutils">
+<dt>This includes: LossComputeBase and the standard NMTLossCompute, and</dt>
+<dd>sharded loss compute stuff.</dd>
+</dl>
+<dl class="class">
+<dt id="models.loss.LabelSmoothingLoss">
+<em class="property">class </em><code class="descclassname">models.loss.</code><code class="descname">LabelSmoothingLoss</code><span class="sig-paren">(</span><em>label_smoothing</em>, <em>tgt_vocab_size</em>, <em>ignore_index=-100</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.LabelSmoothingLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>With label smoothing,
+KL-divergence between q_{smoothed ground truth prob.}(w)
+and p_{prob. computed by model}(w) is minimized.</p>
+<dl class="method">
+<dt id="models.loss.LabelSmoothingLoss.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>output</em>, <em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.LabelSmoothingLoss.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>output (FloatTensor): batch_size x n_classes
+target (LongTensor): batch_size</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.loss.LossComputeBase">
+<em class="property">class </em><code class="descclassname">models.loss.</code><code class="descname">LossComputeBase</code><span class="sig-paren">(</span><em>generator</em>, <em>pad_id</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.LossComputeBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Class for managing efficient loss computation. Handles
+sharding next step predictions and accumulating mutiple
+loss computations</p>
+<p>Users can implement their own loss computation strategy by making
+subclass of this one.  Users need to implement the _compute_loss()
+and make_shard_state() methods.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>generator (<code class="xref py py-obj docutils literal notranslate"><span class="pre">nn.Module</span></code>) :</dt>
+<dd>module that maps the output of the decoder to a
+distribution over the target vocabulary.</dd>
+<dt>tgt_vocab (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Vocab</span></code>) :</dt>
+<dd>torchtext vocab object representing the target output</dd>
+</dl>
+<p class="last">normalzation (str): normalize by “sents” or “tokens”</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.loss.LossComputeBase.monolithic_compute_loss">
+<code class="descname">monolithic_compute_loss</code><span class="sig-paren">(</span><em>batch</em>, <em>output</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.LossComputeBase.monolithic_compute_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the forward loss for the batch.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">batch (batch): batch of labeled examples
+output (<code class="xref py py-obj docutils literal notranslate"><span class="pre">FloatTensor</span></code>):</p>
+<blockquote>
+<div>output of decoder model <cite>[tgt_len x batch x hidden]</cite></div></blockquote>
+<dl class="last docutils">
+<dt>attns (dict of <code class="xref py py-obj docutils literal notranslate"><span class="pre">FloatTensor</span></code>) :</dt>
+<dd>dictionary of attention distributions
+<cite>[tgt_len x batch x src_len]</cite></dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.Statistics</span></code>: loss statistics</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.loss.LossComputeBase.sharded_compute_loss">
+<code class="descname">sharded_compute_loss</code><span class="sig-paren">(</span><em>batch</em>, <em>output</em>, <em>shard_size</em>, <em>normalization</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.LossComputeBase.sharded_compute_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the forward loss and backpropagate.  Computation is done
+with shards and optionally truncation for memory efficiency.</p>
+<p>Also supports truncated BPTT for long sequences by taking a
+range in the decoder output sequence to back propagate in.
+Range is from <cite>(cur_trunc, cur_trunc + trunc_size)</cite>.</p>
+<p>Note sharding is an exact efficiency trick to relieve memory
+required for the generation buffers. Truncation is an
+approximate efficiency trick to relieve the memory required
+in the RNN buffers.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">batch (batch) : batch of labeled examples
+output (<code class="xref py py-obj docutils literal notranslate"><span class="pre">FloatTensor</span></code>) :</p>
+<blockquote>
+<div>output of decoder model <cite>[tgt_len x batch x hidden]</cite></div></blockquote>
+<dl class="docutils">
+<dt>attns (dict) <span class="classifier-delimiter">:</span> <span class="classifier">dictionary of attention distributions</span></dt>
+<dd><cite>[tgt_len x batch x src_len]</cite></dd>
+</dl>
+<p class="last">cur_trunc (int) : starting position of truncation window
+trunc_size (int) : length of truncation window
+shard_size (int) : maximum number of examples in a shard
+normalization (int) : Loss is divided by this number</p>
+</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.Statistics</span></code>: validation loss statistics</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.loss.NMTLossCompute">
+<em class="property">class </em><code class="descclassname">models.loss.</code><code class="descname">NMTLossCompute</code><span class="sig-paren">(</span><em>generator</em>, <em>symbols</em>, <em>vocab_size</em>, <em>label_smoothing=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.NMTLossCompute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.loss.LossComputeBase" title="models.loss.LossComputeBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.loss.LossComputeBase</span></code></a></p>
+<p>Standard NMT Loss Computation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.loss.abs_loss">
+<code class="descclassname">models.loss.</code><code class="descname">abs_loss</code><span class="sig-paren">(</span><em>generator</em>, <em>symbols</em>, <em>vocab_size</em>, <em>device</em>, <em>train=True</em>, <em>label_smoothing=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.abs_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="models.loss.filter_shard_state">
+<code class="descclassname">models.loss.</code><code class="descname">filter_shard_state</code><span class="sig-paren">(</span><em>state</em>, <em>shard_size=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.filter_shard_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.loss.shards">
+<code class="descclassname">models.loss.</code><code class="descname">shards</code><span class="sig-paren">(</span><em>state</em>, <em>shard_size</em>, <em>eval_only=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.loss.shards" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>state: A dictionary which corresponds to the output of</dt>
+<dd><a href="#id1"><span class="problematic" id="id2">*</span></a>LossCompute._make_shard_state(). The values for
+those keys are Tensor-like or None.</dd>
+</dl>
+<p>shard_size: The maximum size of the shards yielded by the model.
+eval_only: If True, only yield the state, nothing else.</p>
+<blockquote class="last">
+<div>Otherwise, yield shards.</div></blockquote>
+</dd>
+<dt>Yields:</dt>
+<dd>Each yielded shard is a dict.</dd>
+<dt>Side effect:</dt>
+<dd>After the last shard, this function does back-propagation.</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.model_builder">
+<span id="models-model-builder-module"></span><h2>models.model_builder module<a class="headerlink" href="#module-models.model_builder" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.model_builder.AbsSummarizer">
+<em class="property">class </em><code class="descclassname">models.model_builder.</code><code class="descname">AbsSummarizer</code><span class="sig-paren">(</span><em>args</em>, <em>device</em>, <em>checkpoint=None</em>, <em>bert_from_extractive=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.AbsSummarizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.model_builder.AbsSummarizer.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>src</em>, <em>tgt</em>, <em>segs</em>, <em>clss</em>, <em>mask_src</em>, <em>mask_tgt</em>, <em>mask_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.AbsSummarizer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.model_builder.Bert">
+<em class="property">class </em><code class="descclassname">models.model_builder.</code><code class="descname">Bert</code><span class="sig-paren">(</span><em>large</em>, <em>temp_dir</em>, <em>finetune=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.Bert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.model_builder.Bert.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em>, <em>segs</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.Bert.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.model_builder.ExtSummarizer">
+<em class="property">class </em><code class="descclassname">models.model_builder.</code><code class="descname">ExtSummarizer</code><span class="sig-paren">(</span><em>args</em>, <em>device</em>, <em>checkpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.ExtSummarizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="models.model_builder.ExtSummarizer.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>src</em>, <em>segs</em>, <em>clss</em>, <em>mask_src</em>, <em>mask_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.ExtSummarizer.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.model_builder.build_optim">
+<code class="descclassname">models.model_builder.</code><code class="descname">build_optim</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>checkpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.build_optim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build optimizer, loading in models and checkpoints if available</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.model_builder.build_optim_bert">
+<code class="descclassname">models.model_builder.</code><code class="descname">build_optim_bert</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>checkpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.build_optim_bert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build optimizer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.model_builder.build_optim_dec">
+<code class="descclassname">models.model_builder.</code><code class="descname">build_optim_dec</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>checkpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.build_optim_dec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build optimizer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.model_builder.get_generator">
+<code class="descclassname">models.model_builder.</code><code class="descname">get_generator</code><span class="sig-paren">(</span><em>vocab_size</em>, <em>dec_hidden_size</em>, <em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#models.model_builder.get_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-models.neural">
+<span id="models-neural-module"></span><h2>models.neural module<a class="headerlink" href="#module-models.neural" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.neural.DecoderState">
+<em class="property">class </em><code class="descclassname">models.neural.</code><code class="descname">DecoderState</code><a class="headerlink" href="#models.neural.DecoderState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interface for grouping together the current state of a recurrent
+decoder. In the simplest case just represents the hidden state of
+the model.  But can also be used for implementing various forms of
+input_feeding and non-recurrent models.</p>
+<p>Modules need to implement this to utilize beam search decoding.</p>
+<dl class="method">
+<dt id="models.neural.DecoderState.beam_update">
+<code class="descname">beam_update</code><span class="sig-paren">(</span><em>idx</em>, <em>positions</em>, <em>beam_size</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.DecoderState.beam_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Need to document this</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.neural.DecoderState.detach">
+<code class="descname">detach</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.DecoderState.detach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Need to document this</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.neural.DecoderState.map_batch_fn">
+<code class="descname">map_batch_fn</code><span class="sig-paren">(</span><em>fn</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.DecoderState.map_batch_fn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.neural.GlobalAttention">
+<em class="property">class </em><code class="descclassname">models.neural.</code><code class="descname">GlobalAttention</code><span class="sig-paren">(</span><em>dim</em>, <em>attn_type='dot'</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.GlobalAttention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Global attention takes a matrix and a query vector. It
+then computes a parameterized convex combination of the matrix
+based on the input query.</p>
+<p>Constructs a unit mapping a query <cite>q</cite> of size <cite>dim</cite>
+and a source matrix <cite>H</cite> of size <cite>n x dim</cite>, to an output
+of size <cite>dim</cite>.</p>
+<p>All models compute the output as
+<span class="math notranslate nohighlight">\(c = sum_{j=1}^{SeqLength} a_j H_j\)</span> where
+<span class="math notranslate nohighlight">\(a_j\)</span> is the softmax of a score function.
+Then then apply a projection layer to [q, c].</p>
+<p>However they
+differ on how they compute the attention score.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Luong Attention (dot, general):</dt>
+<dd><ul class="first last">
+<li>dot: <span class="math notranslate nohighlight">\(score(H_j,q) = H_j^T q\)</span></li>
+<li>general: <span class="math notranslate nohighlight">\(score(H_j, q) = H_j^T W_a q\)</span></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Bahdanau Attention (mlp):</dt>
+<dd><ul class="first last">
+<li><span class="math notranslate nohighlight">\(score(H_j, q) = v_a^T tanh(W_a q + U_a h_j)\)</span></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>dim (int): dimensionality of query and key
+coverage (bool): use coverage term
+attn_type (str): type of attention to use, options [dot,general,mlp]</dd>
+</dl>
+<dl class="method">
+<dt id="models.neural.GlobalAttention.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>source</em>, <em>memory_bank</em>, <em>memory_lengths=None</em>, <em>memory_masks=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.GlobalAttention.forward" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Args:</dt>
+<dd>source (<cite>FloatTensor</cite>): query vectors <cite>[batch x tgt_len x dim]</cite>
+memory_bank (<cite>FloatTensor</cite>): source vectors <cite>[batch x src_len x dim]</cite>
+memory_lengths (<cite>LongTensor</cite>): the source context lengths <cite>[batch]</cite>
+coverage (<cite>FloatTensor</cite>): None (not supported yet)</dd>
+<dt>Returns:</dt>
+<dd><p class="first">(<cite>FloatTensor</cite>, <cite>FloatTensor</cite>):</p>
+<ul class="last simple">
+<li>Computed vector <cite>[tgt_len x batch x dim]</cite></li>
+<li><dl class="first docutils">
+<dt>Attention distribtutions for each query</dt>
+<dd><cite>[tgt_len x batch x src_len]</cite></dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.neural.GlobalAttention.score">
+<code class="descname">score</code><span class="sig-paren">(</span><em>h_t</em>, <em>h_s</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.GlobalAttention.score" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Args:</dt>
+<dd>h_t (<cite>FloatTensor</cite>): sequence of queries <cite>[batch x tgt_len x dim]</cite>
+h_s (<cite>FloatTensor</cite>): sequence of sources <cite>[batch x src_len x dim]</cite></dd>
+<dt>Returns:</dt>
+<dd><dl class="first docutils">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">FloatTensor</span></code>:</dt>
+<dd>raw attention scores (unnormalized) for each src index</dd>
+</dl>
+<p class="last"><cite>[batch x tgt_len x src_len]</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.neural.MultiHeadedAttention">
+<em class="property">class </em><code class="descclassname">models.neural.</code><code class="descname">MultiHeadedAttention</code><span class="sig-paren">(</span><em>head_count</em>, <em>model_dim</em>, <em>dropout=0.1</em>, <em>use_final_linear=True</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.MultiHeadedAttention" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>Multi-Head Attention module from
+“Attention is All You Need”
+<a href="#id3"><span class="problematic" id="id4">:cite:`DBLP:journals/corr/VaswaniSPUJGKP17`</span></a>.</p>
+<p>Similar to standard <cite>dot</cite> attention but uses
+multiple attention distributions simulataneously
+to select relevant items.</p>
+<p>Also includes several additional tricks.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">head_count (int): number of parallel heads
+model_dim (int): the dimension of keys/values/queries,</p>
+<blockquote>
+<div>must be divisible by head_count</div></blockquote>
+<p class="last">dropout (float): dropout parameter</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.neural.MultiHeadedAttention.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>key</em>, <em>value</em>, <em>query</em>, <em>mask=None</em>, <em>layer_cache=None</em>, <em>type=None</em>, <em>predefined_graph_1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.MultiHeadedAttention.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the context vector and the attention vectors.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>key (<cite>FloatTensor</cite>): set of <cite>key_len</cite></dt>
+<dd>key vectors <cite>[batch, key_len, dim]</cite></dd>
+<dt>value (<cite>FloatTensor</cite>): set of <cite>key_len</cite></dt>
+<dd>value vectors <cite>[batch, key_len, dim]</cite></dd>
+<dt>query (<cite>FloatTensor</cite>): set of <cite>query_len</cite></dt>
+<dd>query vectors  <cite>[batch, query_len, dim]</cite></dd>
+<dt>mask: binary mask indicating which keys have</dt>
+<dd>non-zero attention <cite>[batch, query_len, key_len]</cite></dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd><p class="first">(<cite>FloatTensor</cite>, <cite>FloatTensor</cite>) :</p>
+<ul class="last simple">
+<li>output context vectors <cite>[batch, query_len, dim]</cite></li>
+<li>one of the attention vectors <cite>[batch, query_len, key_len]</cite></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.neural.PositionwiseFeedForward">
+<em class="property">class </em><code class="descclassname">models.neural.</code><code class="descname">PositionwiseFeedForward</code><span class="sig-paren">(</span><em>d_model</em>, <em>d_ff</em>, <em>dropout=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.PositionwiseFeedForward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<p>A two-layer Feed-Forward-Network with residual layer norm.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">d_model (int): the size of input for the first-layer of the FFN.
+d_ff (int): the hidden layer size of the second-layer</p>
+<blockquote>
+<div>of the FNN.</div></blockquote>
+<p class="last">dropout (float): dropout probability in <span class="math notranslate nohighlight">\([0, 1)\)</span>.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.neural.PositionwiseFeedForward.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.PositionwiseFeedForward.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.neural.aeq">
+<code class="descclassname">models.neural.</code><code class="descname">aeq</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.aeq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert all arguments have the same value</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.neural.gelu">
+<code class="descclassname">models.neural.</code><code class="descname">gelu</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.gelu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="models.neural.sequence_mask">
+<code class="descclassname">models.neural.</code><code class="descname">sequence_mask</code><span class="sig-paren">(</span><em>lengths</em>, <em>max_len=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.neural.sequence_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a boolean mask from sequence lengths.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.optimizers">
+<span id="models-optimizers-module"></span><h2>models.optimizers module<a class="headerlink" href="#module-models.optimizers" title="Permalink to this headline">¶</a></h2>
+<p>Optimizers class</p>
+<dl class="class">
+<dt id="models.optimizers.MultipleOptimizer">
+<em class="property">class </em><code class="descclassname">models.optimizers.</code><code class="descname">MultipleOptimizer</code><span class="sig-paren">(</span><em>op</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.MultipleOptimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implement multiple optimizers needed for sparse adam</p>
+<dl class="method">
+<dt id="models.optimizers.MultipleOptimizer.load_state_dict">
+<code class="descname">load_state_dict</code><span class="sig-paren">(</span><em>state_dicts</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.MultipleOptimizer.load_state_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="models.optimizers.MultipleOptimizer.state">
+<code class="descname">state</code><a class="headerlink" href="#models.optimizers.MultipleOptimizer.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.optimizers.MultipleOptimizer.state_dict">
+<code class="descname">state_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.MultipleOptimizer.state_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.optimizers.MultipleOptimizer.step">
+<code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.MultipleOptimizer.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.optimizers.MultipleOptimizer.zero_grad">
+<code class="descname">zero_grad</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.MultipleOptimizer.zero_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.optimizers.Optimizer">
+<em class="property">class </em><code class="descclassname">models.optimizers.</code><code class="descname">Optimizer</code><span class="sig-paren">(</span><em>method</em>, <em>learning_rate</em>, <em>max_grad_norm</em>, <em>lr_decay=1</em>, <em>start_decay_steps=None</em>, <em>decay_steps=None</em>, <em>beta1=0.9</em>, <em>beta2=0.999</em>, <em>adagrad_accum=0.0</em>, <em>decay_method=None</em>, <em>warmup_steps=4000</em>, <em>weight_decay=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.Optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Controller class for optimization. Mostly a thin
+wrapper for <cite>optim</cite>, but also useful for implementing
+rate scheduling beyond what is currently available.
+Also implements necessary methods for training RNNs such
+as grad manipulations.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>method (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>): one of [sgd, adagrad, adadelta, adam]
+lr (float): learning rate
+lr_decay (float, optional): learning rate decay multiplier
+start_decay_steps (int, optional): step to start learning rate decay
+beta1, beta2 (float, optional): parameters for adam
+adagrad_accum (float, optional): initialization parameter for adagrad
+decay_method (str, option): custom decay options
+warmup_steps (int, option): parameter for <cite>noam</cite> decay
+model_size (int, option): parameter for <cite>noam</cite> decay</dd>
+</dl>
+<p>We use the default parameters for Adam that are suggested by
+the original paper <a class="reference external" href="https://arxiv.org/pdf/1412.6980.pdf">https://arxiv.org/pdf/1412.6980.pdf</a>
+These values are also used by other established implementations,
+e.g. <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer">https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer</a>
+<a class="reference external" href="https://keras.io/optimizers/">https://keras.io/optimizers/</a>
+Recently there are slightly different values used in the paper
+“Attention is all you need”
+<a class="reference external" href="https://arxiv.org/pdf/1706.03762.pdf">https://arxiv.org/pdf/1706.03762.pdf</a>, particularly the value beta2=0.98
+was used there however, beta2=0.999 is still arguably the more
+established value, so we use that here as well</p>
+<dl class="method">
+<dt id="models.optimizers.Optimizer.set_parameters">
+<code class="descname">set_parameters</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.Optimizer.set_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.optimizers.Optimizer.step">
+<code class="descname">step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.Optimizer.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the model parameters based on current gradients.</p>
+<p>Optionally, will employ gradient modification or update learning
+rate.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.optimizers.build_optim">
+<code class="descclassname">models.optimizers.</code><code class="descname">build_optim</code><span class="sig-paren">(</span><em>model</em>, <em>opt</em>, <em>checkpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.build_optim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build optimizer</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="models.optimizers.use_gpu">
+<code class="descclassname">models.optimizers.</code><code class="descname">use_gpu</code><span class="sig-paren">(</span><em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#models.optimizers.use_gpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a boolean if gpu is used</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.predictor">
+<span id="models-predictor-module"></span><h2>models.predictor module<a class="headerlink" href="#module-models.predictor" title="Permalink to this headline">¶</a></h2>
+<p>Translator Class and builder</p>
+<dl class="class">
+<dt id="models.predictor.Translation">
+<em class="property">class </em><code class="descclassname">models.predictor.</code><code class="descname">Translation</code><span class="sig-paren">(</span><em>fname</em>, <em>src</em>, <em>src_raw</em>, <em>pred_sents</em>, <em>attn</em>, <em>pred_scores</em>, <em>tgt_sent</em>, <em>gold_score</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Container for a translated sentence.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><p class="first">src (<cite>LongTensor</cite>): src word ids
+src_raw ([str]): raw src words</p>
+<p class="last">pred_sents ([[str]]): words from the n-best translations
+pred_scores ([[float]]): log-probs of n-best translations
+attns ([<cite>FloatTensor</cite>]) : attention dist for each translation
+gold_sent ([str]): words from gold translation
+gold_score ([float]): log-prob of gold translation</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.predictor.Translation.log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>sent_number</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translation.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log translation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.predictor.Translator">
+<em class="property">class </em><code class="descclassname">models.predictor.</code><code class="descname">Translator</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>vocab</em>, <em>symbols</em>, <em>global_scorer=None</em>, <em>logger=None</em>, <em>dump_beam=''</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Uses a model to translate a batch of sentences.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>model (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.modules.NMTModel</span></code>):</dt>
+<dd>NMT model to use for translation</dd>
+</dl>
+<p>fields (dict of Fields): data fields
+beam_size (int): size of beam to use
+n_best (int): number of translations produced
+max_length (int): maximum length output to produce
+global_scores (<code class="xref py py-obj docutils literal notranslate"><span class="pre">GlobalScorer</span></code>):</p>
+<blockquote>
+<div>object to rescore final translations</div></blockquote>
+<p class="last">copy_attn (bool): use copy attention during translation
+cuda (bool): use cuda
+beam_trace (bool): trace beam search for debugging
+logger(logging.Logger): logger.</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.predictor.Translator.from_batch">
+<code class="descname">from_batch</code><span class="sig-paren">(</span><em>translation_batch</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translator.from_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.predictor.Translator.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>data_iter</em>, <em>step</em>, <em>attn_debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translator.translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.predictor.Translator.translate_batch">
+<code class="descname">translate_batch</code><span class="sig-paren">(</span><em>batch</em>, <em>fast=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.Translator.translate_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate a batch of sentences.</p>
+<p>Mostly a wrapper around <code class="xref py py-obj docutils literal notranslate"><span class="pre">Beam</span></code>.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>batch (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Batch</span></code>): a batch from a dataset object
+data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Dataset</span></code>): the dataset object
+fast (bool): enables fast beam search (may not support all features)</dd>
+<dt>Todo:</dt>
+<dd>Shouldn’t need the original dataset.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.predictor.build_predictor">
+<code class="descclassname">models.predictor.</code><code class="descname">build_predictor</code><span class="sig-paren">(</span><em>args</em>, <em>tokenizer</em>, <em>symbols</em>, <em>model</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.predictor.build_predictor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-models.reporter">
+<span id="models-reporter-module"></span><h2>models.reporter module<a class="headerlink" href="#module-models.reporter" title="Permalink to this headline">¶</a></h2>
+<p>Report manager utility</p>
+<dl class="class">
+<dt id="models.reporter.ReportMgr">
+<em class="property">class </em><code class="descclassname">models.reporter.</code><code class="descname">ReportMgr</code><span class="sig-paren">(</span><em>report_every</em>, <em>start_time=-1.0</em>, <em>tensorboard_writer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.reporter.ReportMgrBase" title="models.reporter.ReportMgrBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.reporter.ReportMgrBase</span></code></a></p>
+<dl class="method">
+<dt id="models.reporter.ReportMgr.maybe_log_tensorboard">
+<code class="descname">maybe_log_tensorboard</code><span class="sig-paren">(</span><em>stats</em>, <em>prefix</em>, <em>learning_rate</em>, <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgr.maybe_log_tensorboard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.reporter.ReportMgrBase">
+<em class="property">class </em><code class="descclassname">models.reporter.</code><code class="descname">ReportMgrBase</code><span class="sig-paren">(</span><em>report_every</em>, <em>start_time=-1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgrBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Report Manager Base class
+Inherited classes should override:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>_report_training</cite></li>
+<li><cite>_report_step</cite></li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="models.reporter.ReportMgrBase.log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgrBase.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.ReportMgrBase.report_step">
+<code class="descname">report_step</code><span class="sig-paren">(</span><em>lr</em>, <em>step</em>, <em>train_stats=None</em>, <em>valid_stats=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgrBase.report_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report stats of a step</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>train_stats(Statistics): training stats
+valid_stats(Statistics): validation stats
+lr(float): current learning rate</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.ReportMgrBase.report_training">
+<code class="descname">report_training</code><span class="sig-paren">(</span><em>step</em>, <em>num_steps</em>, <em>learning_rate</em>, <em>report_stats</em>, <em>multigpu=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgrBase.report_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the user-defined batch-level traing progress
+report function.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>step(int): current step count.
+num_steps(int): total number of batches.
+learning_rate(float): current learning rate.
+report_stats(Statistics): old Statistics instance.</dd>
+<dt>Returns:</dt>
+<dd>report_stats(Statistics): updated Statistics instance.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.ReportMgrBase.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.ReportMgrBase.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.reporter.Statistics">
+<em class="property">class </em><code class="descclassname">models.reporter.</code><code class="descname">Statistics</code><span class="sig-paren">(</span><em>loss=0</em>, <em>n_words=0</em>, <em>n_correct=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Accumulator for loss statistics.
+Currently calculates:</p>
+<ul class="simple">
+<li>accuracy</li>
+<li>perplexity</li>
+<li>elapsed time</li>
+</ul>
+<dl class="method">
+<dt id="models.reporter.Statistics.accuracy">
+<code class="descname">accuracy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute accuracy</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="models.reporter.Statistics.all_gather_stats">
+<em class="property">static </em><code class="descname">all_gather_stats</code><span class="sig-paren">(</span><em>stat</em>, <em>max_size=4096</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.all_gather_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather a <cite>Statistics</cite> object accross multiple process/nodes</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>stat(:obj:Statistics): the statistics object to gather</dt>
+<dd>accross all processes/nodes</dd>
+</dl>
+<p class="last">max_size(int): max buffer size to use</p>
+</dd>
+<dt>Returns:</dt>
+<dd><cite>Statistics</cite>, the update stats object</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="models.reporter.Statistics.all_gather_stats_list">
+<em class="property">static </em><code class="descname">all_gather_stats_list</code><span class="sig-paren">(</span><em>stat_list</em>, <em>max_size=4096</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.all_gather_stats_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.elapsed_time">
+<code class="descname">elapsed_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.elapsed_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute elapsed time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.log_tensorboard">
+<code class="descname">log_tensorboard</code><span class="sig-paren">(</span><em>prefix</em>, <em>writer</em>, <em>learning_rate</em>, <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.log_tensorboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>display statistics to tensorboard</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.output">
+<code class="descname">output</code><span class="sig-paren">(</span><em>step</em>, <em>num_steps</em>, <em>learning_rate</em>, <em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write out statistics to stdout.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>step (int): current step
+n_batch (int): total batches
+start (int): start time of step.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.ppl">
+<code class="descname">ppl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.ppl" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute perplexity</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>stat</em>, <em>update_n_src_words=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update statistics by suming values with another <cite>Statistics</cite> object</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">stat: another statistic object
+update_n_src_words(bool): whether to update (sum) <cite>n_src_words</cite></p>
+<blockquote class="last">
+<div>or not</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter.Statistics.xent">
+<code class="descname">xent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.Statistics.xent" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute cross entropy</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.reporter.build_report_manager">
+<code class="descclassname">models.reporter.</code><code class="descname">build_report_manager</code><span class="sig-paren">(</span><em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter.build_report_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-models.reporter_ext">
+<span id="models-reporter-ext-module"></span><h2>models.reporter_ext module<a class="headerlink" href="#module-models.reporter_ext" title="Permalink to this headline">¶</a></h2>
+<p>Report manager utility</p>
+<dl class="class">
+<dt id="models.reporter_ext.ReportMgr">
+<em class="property">class </em><code class="descclassname">models.reporter_ext.</code><code class="descname">ReportMgr</code><span class="sig-paren">(</span><em>report_every</em>, <em>start_time=-1.0</em>, <em>tensorboard_writer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#models.reporter_ext.ReportMgrBase" title="models.reporter_ext.ReportMgrBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">models.reporter_ext.ReportMgrBase</span></code></a></p>
+<dl class="method">
+<dt id="models.reporter_ext.ReportMgr.maybe_log_tensorboard">
+<code class="descname">maybe_log_tensorboard</code><span class="sig-paren">(</span><em>stats</em>, <em>prefix</em>, <em>learning_rate</em>, <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgr.maybe_log_tensorboard" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.reporter_ext.ReportMgrBase">
+<em class="property">class </em><code class="descclassname">models.reporter_ext.</code><code class="descname">ReportMgrBase</code><span class="sig-paren">(</span><em>report_every</em>, <em>start_time=-1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgrBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Report Manager Base class
+Inherited classes should override:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>_report_training</cite></li>
+<li><cite>_report_step</cite></li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="models.reporter_ext.ReportMgrBase.log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgrBase.log" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.ReportMgrBase.report_step">
+<code class="descname">report_step</code><span class="sig-paren">(</span><em>lr</em>, <em>step</em>, <em>train_stats=None</em>, <em>valid_stats=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgrBase.report_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report stats of a step</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>train_stats(Statistics): training stats
+valid_stats(Statistics): validation stats
+lr(float): current learning rate</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.ReportMgrBase.report_training">
+<code class="descname">report_training</code><span class="sig-paren">(</span><em>step</em>, <em>num_steps</em>, <em>learning_rate</em>, <em>report_stats</em>, <em>multigpu=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgrBase.report_training" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the user-defined batch-level traing progress
+report function.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>step(int): current step count.
+num_steps(int): total number of batches.
+learning_rate(float): current learning rate.
+report_stats(Statistics): old Statistics instance.</dd>
+<dt>Returns:</dt>
+<dd>report_stats(Statistics): updated Statistics instance.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.ReportMgrBase.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.ReportMgrBase.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="models.reporter_ext.Statistics">
+<em class="property">class </em><code class="descclassname">models.reporter_ext.</code><code class="descname">Statistics</code><span class="sig-paren">(</span><em>loss=0</em>, <em>n_docs=0</em>, <em>n_correct=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Accumulator for loss statistics.
+Currently calculates:</p>
+<ul class="simple">
+<li>accuracy</li>
+<li>perplexity</li>
+<li>elapsed time</li>
+</ul>
+<dl class="staticmethod">
+<dt id="models.reporter_ext.Statistics.all_gather_stats">
+<em class="property">static </em><code class="descname">all_gather_stats</code><span class="sig-paren">(</span><em>stat</em>, <em>max_size=4096</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.all_gather_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather a <cite>Statistics</cite> object accross multiple process/nodes</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>stat(:obj:Statistics): the statistics object to gather</dt>
+<dd>accross all processes/nodes</dd>
+</dl>
+<p class="last">max_size(int): max buffer size to use</p>
+</dd>
+<dt>Returns:</dt>
+<dd><cite>Statistics</cite>, the update stats object</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="models.reporter_ext.Statistics.all_gather_stats_list">
+<em class="property">static </em><code class="descname">all_gather_stats_list</code><span class="sig-paren">(</span><em>stat_list</em>, <em>max_size=4096</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.all_gather_stats_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather a <cite>Statistics</cite> list accross all processes/nodes</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>stat_list(list([<cite>Statistics</cite>])): list of statistics objects to</dt>
+<dd>gather accross all processes/nodes</dd>
+</dl>
+<p class="last">max_size(int): max buffer size to use</p>
+</dd>
+<dt>Returns:</dt>
+<dd>our_stats(list([<cite>Statistics</cite>])): list of updated stats</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.Statistics.elapsed_time">
+<code class="descname">elapsed_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.elapsed_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute elapsed time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.Statistics.log_tensorboard">
+<code class="descname">log_tensorboard</code><span class="sig-paren">(</span><em>prefix</em>, <em>writer</em>, <em>learning_rate</em>, <em>step</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.log_tensorboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>display statistics to tensorboard</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.Statistics.output">
+<code class="descname">output</code><span class="sig-paren">(</span><em>step</em>, <em>num_steps</em>, <em>learning_rate</em>, <em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write out statistics to stdout.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>step (int): current step
+n_batch (int): total batches
+start (int): start time of step.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.Statistics.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>stat</em>, <em>update_n_src_words=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update statistics by suming values with another <cite>Statistics</cite> object</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">stat: another statistic object
+update_n_src_words(bool): whether to update (sum) <cite>n_src_words</cite></p>
+<blockquote class="last">
+<div>or not</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.reporter_ext.Statistics.xent">
+<code class="descname">xent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.Statistics.xent" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute cross entropy</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.reporter_ext.build_report_manager">
+<code class="descclassname">models.reporter_ext.</code><code class="descname">build_report_manager</code><span class="sig-paren">(</span><em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#models.reporter_ext.build_report_manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-models.trainer">
+<span id="models-trainer-module"></span><h2>models.trainer module<a class="headerlink" href="#module-models.trainer" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.trainer.Trainer">
+<em class="property">class </em><code class="descclassname">models.trainer.</code><code class="descname">Trainer</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>optims</em>, <em>loss</em>, <em>grad_accum_count=1</em>, <em>n_gpu=1</em>, <em>gpu_rank=1</em>, <em>report_manager=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer.Trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that controls the training process.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>model(<code class="xref py py-class docutils literal notranslate"><span class="pre">onmt.models.model.NMTModel</span></code>): translation model</dt>
+<dd>to train</dd>
+<dt>train_loss(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.loss.LossComputeBase</span></code>):</dt>
+<dd>training loss computation</dd>
+<dt>valid_loss(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.loss.LossComputeBase</span></code>):</dt>
+<dd>training loss computation</dd>
+<dt>optim(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.optimizers.Optimizer</span></code>):</dt>
+<dd>the optimizer responsible for update</dd>
+</dl>
+<p>trunc_size(int): length of truncated back propagation through time
+shard_size(int): compute loss in shards of this size for efficiency
+data_type(string): type of the source input: [text|img|audio]
+norm_method(string): normalization methods: [sents|tokens]
+grad_accum_count(int): accumulate gradients this many times.
+report_manager(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.ReportMgrBase</span></code>):</p>
+<blockquote>
+<div>the object that creates reports, or None</div></blockquote>
+<dl class="last docutils">
+<dt>model_saver(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.ModelSaverBase</span></code>): the saver is</dt>
+<dd>used to save a checkpoint.
+Thus nothing will be saved if this parameter is None</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.trainer.Trainer.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>test_iter</em>, <em>step</em>, <em>cal_lead=False</em>, <em>cal_oracle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer.Trainer.test" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Validate model.</dt>
+<dd>valid_iter: validate data iterator</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">nmt.Statistics</span></code>: validation loss statistics</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.trainer.Trainer.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>train_iter_fct</em>, <em>train_steps</em>, <em>valid_iter_fct=None</em>, <em>valid_steps=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer.Trainer.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main training loops.
+by iterating over training data (i.e. <cite>train_iter_fct</cite>)
+and running validation (i.e. iterating over <cite>valid_iter_fct</cite></p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>train_iter_fct(function): a function that returns the train</dt>
+<dd>iterator. e.g. something like
+train_iter_fct = lambda: generator(<a href="#id5"><span class="problematic" id="id6">*</span></a>args, <a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs)</dd>
+</dl>
+<p class="last">valid_iter_fct(function): same as train_iter_fct, for valid data
+train_steps(int):
+valid_steps(int):
+save_checkpoint_steps(int):</p>
+</dd>
+<dt>Return:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.trainer.Trainer.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>valid_iter</em>, <em>step=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer.Trainer.validate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Validate model.</dt>
+<dd>valid_iter: validate data iterator</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">nmt.Statistics</span></code>: validation loss statistics</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.trainer.build_trainer">
+<code class="descclassname">models.trainer.</code><code class="descname">build_trainer</code><span class="sig-paren">(</span><em>args</em>, <em>device_id</em>, <em>model</em>, <em>optims</em>, <em>loss</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer.build_trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplify <cite>Trainer</cite> creation based on user <a href="#id9"><span class="problematic" id="id10">`</span></a>opt`s*
+Args:</p>
+<blockquote>
+<div><p>opt (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Namespace</span></code>): user options (usually from argument parsing)
+model (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.NMTModel</span></code>): the model to train
+fields (dict): dict of fields
+optim (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.Optimizer</span></code>): optimizer used during training
+data_type (str): string describing the type of data</p>
+<blockquote>
+<div>e.g. “text”, “img”, “audio”</div></blockquote>
+<dl class="docutils">
+<dt>model_saver(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.ModelSaverBase</span></code>): the utility object</dt>
+<dd>used to save the model</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models.trainer_ext">
+<span id="models-trainer-ext-module"></span><h2>models.trainer_ext module<a class="headerlink" href="#module-models.trainer_ext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="models.trainer_ext.Trainer">
+<em class="property">class </em><code class="descclassname">models.trainer_ext.</code><code class="descname">Trainer</code><span class="sig-paren">(</span><em>args</em>, <em>model</em>, <em>optim</em>, <em>grad_accum_count=1</em>, <em>n_gpu=1</em>, <em>gpu_rank=1</em>, <em>report_manager=None</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer_ext.Trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that controls the training process.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>model(<code class="xref py py-class docutils literal notranslate"><span class="pre">onmt.models.model.NMTModel</span></code>): translation model</dt>
+<dd>to train</dd>
+<dt>train_loss(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.loss.LossComputeBase</span></code>):</dt>
+<dd>training loss computation</dd>
+<dt>valid_loss(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.loss.LossComputeBase</span></code>):</dt>
+<dd>training loss computation</dd>
+<dt>optim(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.optimizers.Optimizer</span></code>):</dt>
+<dd>the optimizer responsible for update</dd>
+</dl>
+<p>trunc_size(int): length of truncated back propagation through time
+shard_size(int): compute loss in shards of this size for efficiency
+data_type(string): type of the source input: [text|img|audio]
+norm_method(string): normalization methods: [sents|tokens]
+grad_accum_count(int): accumulate gradients this many times.
+report_manager(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.ReportMgrBase</span></code>):</p>
+<blockquote>
+<div>the object that creates reports, or None</div></blockquote>
+<dl class="last docutils">
+<dt>model_saver(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.ModelSaverBase</span></code>): the saver is</dt>
+<dd>used to save a checkpoint.
+Thus nothing will be saved if this parameter is None</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="models.trainer_ext.Trainer.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>test_iter</em>, <em>step</em>, <em>cal_lead=False</em>, <em>cal_oracle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer_ext.Trainer.test" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Validate model.</dt>
+<dd>valid_iter: validate data iterator</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">nmt.Statistics</span></code>: validation loss statistics</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.trainer_ext.Trainer.train">
+<code class="descname">train</code><span class="sig-paren">(</span><em>train_iter_fct</em>, <em>train_steps</em>, <em>valid_iter_fct=None</em>, <em>valid_steps=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer_ext.Trainer.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main training loops.
+by iterating over training data (i.e. <cite>train_iter_fct</cite>)
+and running validation (i.e. iterating over <cite>valid_iter_fct</cite></p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>train_iter_fct(function): a function that returns the train</dt>
+<dd>iterator. e.g. something like
+train_iter_fct = lambda: generator(<a href="#id11"><span class="problematic" id="id12">*</span></a>args, <a href="#id13"><span class="problematic" id="id14">**</span></a>kwargs)</dd>
+</dl>
+<p class="last">valid_iter_fct(function): same as train_iter_fct, for valid data
+train_steps(int):
+valid_steps(int):
+save_checkpoint_steps(int):</p>
+</dd>
+<dt>Return:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="models.trainer_ext.Trainer.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>valid_iter</em>, <em>step=0</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer_ext.Trainer.validate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Validate model.</dt>
+<dd>valid_iter: validate data iterator</dd>
+<dt>Returns:</dt>
+<dd><code class="xref py py-obj docutils literal notranslate"><span class="pre">nmt.Statistics</span></code>: validation loss statistics</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="models.trainer_ext.build_trainer">
+<code class="descclassname">models.trainer_ext.</code><code class="descname">build_trainer</code><span class="sig-paren">(</span><em>args</em>, <em>device_id</em>, <em>model</em>, <em>optim</em><span class="sig-paren">)</span><a class="headerlink" href="#models.trainer_ext.build_trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplify <cite>Trainer</cite> creation based on user <a href="#id15"><span class="problematic" id="id16">`</span></a>opt`s*
+Args:</p>
+<blockquote>
+<div><p>opt (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Namespace</span></code>): user options (usually from argument parsing)
+model (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.NMTModel</span></code>): the model to train
+fields (dict): dict of fields
+optim (<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.utils.Optimizer</span></code>): optimizer used during training
+data_type (str): string describing the type of data</p>
+<blockquote>
+<div>e.g. “text”, “img”, “audio”</div></blockquote>
+<dl class="docutils">
+<dt>model_saver(<code class="xref py py-obj docutils literal notranslate"><span class="pre">onmt.models.ModelSaverBase</span></code>): the utility object</dt>
+<dd>used to save the model</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-models" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="others.html" class="btn btn-neutral float-right" title="others package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="distributed.html" class="btn btn-neutral float-left" title="distributed module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Joshua Ole Huy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
