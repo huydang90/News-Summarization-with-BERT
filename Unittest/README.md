@@ -1,6 +1,6 @@
 # Unittest for News Summarization Project
 
-The unittest files are to be run in the same folder as the code files to be test. Therefore, please change directory to the following order to access the tests: Code/src. 4 tests are available to check certain functionalities of the code files. 
+The unittest files are to be run in the same folder as the code files to be test. Therefore, please change directory to the following order to access the tests: [Code/src](https://github.com/huydang90/News-Summarization-with-BERT/tree/master/Code/src). 4 tests are available to check certain functionalities of the code files. 
 
 ```
 $ cd Code/src                # change directory to src folder within the Code folder
