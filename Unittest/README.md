@@ -1,3 +1,11 @@
-# Automated News Summarization with BERT-Powered Encoders
+# Unittest for News Summarization Project
 
-Text  summarization  is  one  of  the  central  challenges  inthe  fields  of  Machine  Learning  and  Natural  Language Processing  (NLP).  Bidirectional  Encoder  Representations from Transformers (BERT), a new contextual pre-training method  for  language  representations,  has  been  heralded as the state-of-the-art neural network architecture that can outperform any others in over 11 complex NLP tasks at the time of its creation.  In this paper, we explore the potential of utilizing BERT as the basis for a document level encoder that can capture and generate a representation for text sentences  and  meanings,  ultimately  providing  a  reliable  and accurate automated summarization process of news articles from different international outlets.
+The unittest files are to be run in the same folder as the code files to be test. Therefore, please change directory to the following order to access the tests: Code/src. 4 tests are available to check certain functionalities of the code files. 
+
+```
+$ cd Code/src                # change directory to src folder within the Code folder
+$ python test_train.py
+$ python test_post_stats.py
+$ python test_utils.py
+$ python test_cal_rouge.py        
+```
