@@ -19,7 +19,7 @@ With the app, the users will be able to copy news articles or any piece of writi
 
 ![App UI](https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/news_app.gif?raw=true)
 
-To launch the app, please download to clone the project into your local machine, change directory into the <b>src</b> folder of the <b>Web Application</b> folder, and download the folloing three models into the <b>models</b> folder. You will also need to install the Flask framework. 
+To launch the app, please download to clone the project into your local machine, change directory into the <b>src</b> folder of the <b>Web Application</b> folder, and download the following three files into the <b>models</b> folder. You will also need to install the Flask framework. 
 
 [BERT Extractive Model](https://drive.google.com/file/d/1Vz_m3RB0fxqToyXLeJYEseP6P5mG3fS5/view?usp=sharing)   
 [BERT Abstractive Model](https://drive.google.com/file/d/1fat4oTual4h_E5sLxd8hQfD5Xy_ikHic/view?usp=sharing)  
@@ -27,7 +27,7 @@ To launch the app, please download to clone the project into your local machine,
 
 ```
 $ pip install flask     # install Flask
-$ cd src    			# change directory to src folder
+$ cd src                # change directory to src folder
 $ python app.py         # launch the app
 ```
 
