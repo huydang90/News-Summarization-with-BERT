@@ -37,12 +37,23 @@ The app will be launch on one of your local ports. Please copy and paste the url
 
 ### Mobile Application UI
 
+Quick News with BERT is a proof of concept for how these automated summary models can be utilized in real life setting. The user will be able to choose news sites that are of their interest and see the latest updated articles and generate their summaries quickly and efficiently. 
+
+Make sure you have Flutter installed on your local machine. For more instructions on how to install flutter, please take a look [here](https://flutter.io/docs/get-started/install).
+
+To test the app UI (available on both iOS and Android platforms), please run the following commands in your terminal, after installing Flutter:
+
+```
+$ git clone https://github.com/huydang90/Flutter-News-Summary-App.git
+$ cd Flutter-News-Summary-App
+$ flutter run
+```
+
 ![Mobile UI](https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/mobile2.png?raw=true)
 
 <p align="center">
   <img src="https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/bert_app.gif?raw=true">
 </p>
-
 
 ### Documentation
 
