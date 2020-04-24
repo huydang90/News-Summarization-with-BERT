@@ -3,6 +3,8 @@
 |
 <b><a href="#web-application">Web Application</a></b>
 |
+<b><a href="#mobile-application-ui">Mobile Application UI</a></b>
+|
 <b><a href="#documentation">Documentation</a></b>
 </p>
 
@@ -32,6 +34,15 @@ $ python app.py         # launch the app
 ```
 
 The app will be launch on one of your local ports. Please copy and paste the url to your browser and test out the app.
+
+### Mobile Application UI
+
+![Mobile UI](https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/mobile2.png?raw=true)
+
+<p align="center">
+  <img src="https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/bert_app.gif?raw=true">
+</p>
+
 
 ### Documentation
 
