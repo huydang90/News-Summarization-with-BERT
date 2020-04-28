@@ -21,7 +21,7 @@ With the app, the users will be able to copy news articles or any piece of writi
 
 ![App UI](https://github.com/huydang90/News-Summarization-with-BERT/blob/master/ImageAssets/news_app.gif?raw=true)
 
-To launch the app, please download to clone the project into your local machine, change directory into the <b>src</b> folder of the <b>Web Application</b> folder, and download the following three files into the <b>models</b> folder. You will also need to install the Flask framework. 
+To launch the app, please download or clone the project into your local machine, change directory into the <b>src</b> folder of the <b>Web Application</b> folder, and download the following three files into the <b>models</b> folder. You will also need to install the Flask framework. 
 
 [BERT Extractive Model](https://drive.google.com/file/d/1Vz_m3RB0fxqToyXLeJYEseP6P5mG3fS5/view?usp=sharing)   
 [BERT Abstractive Model](https://drive.google.com/file/d/1fat4oTual4h_E5sLxd8hQfD5Xy_ikHic/view?usp=sharing)  
@@ -37,7 +37,7 @@ The app will be launch on one of your local ports. Please copy and paste the url
 
 ### Mobile Application UI
 
-Quick News with BERT is a proof of concept for how these automated summary models can be utilized in real life setting. The user will be able to choose news sites that are of their interest and see the latest updated articles and generate their summaries quickly and efficiently. 
+Quick News with BERT is a proof of concept for how these automated summary models can be utilized in real life setting. The user will be able to choose news sites that are of their interest and see the latest updated articles and generate their summaries quickly and efficiently. The functionalities, at the moment, are hard-coded in, however, and will be updated in the future. 
 
 Make sure you have Flutter installed on your local machine. For more instructions on how to install flutter, please take a look [here](https://flutter.io/docs/get-started/install).
 
